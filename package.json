@@ -1,0 +1,9 @@
+{
+  "name": "povarvdom-landing",
+  "version": "1.0.0",
+  "description": "Продающий лендинг Повар в дом — AIDA",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000"
+  }
+}
