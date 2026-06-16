@@ -507,6 +507,45 @@
             color: #C5A46D;
             text-decoration: none;
         }
+
+        /* ===== МОБИЛЬНАЯ CTA (добавлено) ===== */
+        .mobile-cta {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .floating-max, .sticky-social {
+                display: none;
+            }
+
+            .mobile-cta {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 99999;
+                background: rgba(11,11,11,0.95);
+                border-top: 1px solid rgba(197,164,109,0.3);
+            }
+
+            .mobile-cta a {
+                flex: 1;
+                text-align: center;
+                padding: 14px 0;
+                font-size: 12px;
+                color: #C5A46D;
+                text-decoration: none;
+                border-right: 1px solid rgba(197,164,109,0.2);
+            }
+
+            .mobile-cta a:last-child {
+                border-right: none;
+                background: #C5A46D;
+                color: #0B0B0B;
+                font-weight: 700;
+            }
+        }
     </style>
 </head>
 <body>
@@ -544,10 +583,16 @@
     <div class="hero-content">
         <div class="hero-eyebrow">Кострома &amp; область · Выездной шеф</div>
         <h1>Ваш личный кулинарный гид<br/>для <em>особых моментов</em></h1>
-        <p>Авторские ужины, выездной кейтеринг и готовые блюда ресторанного уровня — прямо у вас дома.</p>
+        <!-- Текст усилен продающим сообщением -->
+        <p>Ресторанный уровень у вас дома. Частные ужины, кейтеринг и мероприятия под ключ — без вашего участия, с полной организацией и уборкой кухни.</p>
         <div class="hero-btns">
-            <a class="btn" href="#contact">Обсудить меню</a>
+            <!-- Кнопка с усиленным CTA -->
+            <a class="btn" href="#contact">Получить расчёт меню</a>
             <a class="btn btn-outline" href="#menu">Смотреть меню</a>
+        </div>
+        <!-- Дополнительный блок-убеждение -->
+        <div style="margin-top:18px;font-size:13px;color:rgba(245,240,235,0.7);">
+            ⚡ Ответ в течение 1 часа · Работаю под ключ · Кострома и область
         </div>
 
         <!-- БЛОК 3: HERO CTA + ВОРОНКА -->
@@ -965,6 +1010,13 @@
 <!-- ===== FLOATING MAX (БЛОК 2) ===== -->
 <a class="floating-max" href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI" target="_blank">Написать в MAX</a>
 
+<!-- ===== МОБИЛЬНАЯ CTA (добавлено) ===== -->
+<div class="mobile-cta">
+    <a href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI">MAX</a>
+    <a href="https://t.me/diana_chef">Telegram</a>
+    <a href="#contact">Заказать</a>
+</div>
+
 <!-- ===== SCRIPTS ===== -->
 <script>
     // Header shrink on scroll
@@ -995,7 +1047,7 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // ===== ОБРАБОТКА ФОРМЫ С FORMPREE =====
+    // ===== ОБРАБОТКА ФОРМЫ С FORMPREE (исправлено) =====
     const form = document.getElementById('orderForm');
     const successBlock = document.getElementById('formSuccess');
 
@@ -1006,11 +1058,11 @@
         const data = Object.fromEntries(formData.entries());
 
         try {
+            // Отправляем как FormData, без Content-Type (браузер сам установит multipart/form-data)
             const response = await fetch(form.action, {
                 method: 'POST',
-                body: JSON.stringify(data),
+                body: formData,
                 headers: {
-                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
             });
@@ -1020,7 +1072,7 @@
                 form.style.display = 'none';
                 successBlock.classList.add('show');
 
-                // Отправляем данные в CRM (если нужно)
+                // Логируем данные для отладки
                 console.log('Форма успешно отправлена!', data);
             } else {
                 alert('Что-то пошло не так. Попробуйте ещё раз или напишите мне напрямую.');
