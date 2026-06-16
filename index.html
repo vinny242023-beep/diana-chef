@@ -127,14 +127,13 @@
         }
         .hero h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
 
-        /* Усиленный продающий текст */
         .hero p {
             font-size: 17px; font-weight: 300; max-width: 600px; margin: 0 auto 30px;
             color: rgba(245,240,235,0.85);
         }
+
         .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* Триггеры под кнопками */
         .hero-triggers {
             margin-top: 16px;
             font-size: 13px;
@@ -150,7 +149,7 @@
             gap: 6px;
         }
 
-        /* Секции */
+        /* Sections */
         .section { padding: 96px 0; }
         .section-label {
             text-align: center; margin-bottom: 14px;
@@ -173,7 +172,6 @@
         .why-card h3 { font-size: 22px; margin-bottom: 12px; color: var(--light); }
         .why-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-        /* Психологический триггер в WHY */
         .why-trigger {
             text-align: center;
             margin-top: 40px;
@@ -416,9 +414,7 @@
         .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
         .fade-in.visible { opacity: 1; transform: none; }
 
-        /* ===== БЛОКИ ДЛЯ УЛУЧШЕНИЯ КОНВЕРСИИ ===== */
-
-        /* Стикеры (убираем лишние, оставляем только MAX) */
+        /* Sticky and floating */
         .sticky-social {
             position: fixed;
             right: 18px;
@@ -448,7 +444,6 @@
             transform: translateX(-4px) scale(1.05);
         }
 
-        /* Floating MAX (оставляем как дополнительный канал) */
         .floating-max {
             position: fixed;
             bottom: 24px;
@@ -468,7 +463,6 @@
             50% { box-shadow: 0 10px 30px rgba(197,164,109,0.25); }
         }
 
-        /* Мобильная CTA панель (только 3 кнопки) */
         .mobile-cta {
             display: none;
         }
@@ -509,7 +503,6 @@
             }
         }
 
-        /* Дополнительные правки для мобильной навигации */
         @media (max-width: 900px) {
             nav, .btn-wa { display: none; }
             .burger { display: flex; }
@@ -560,32 +553,89 @@
     <a href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI" style="color:var(--gold);">💬 MAX</a>
 </div>
 
-<!-- ===== HERO (с MAX как главным каналом) ===== -->
+<!-- ===== НОВЫЙ HERO С КВИЗОМ И ПАКЕТАМИ ===== -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-eyebrow">Кострома &amp; область · Выездной шеф</div>
-        <h1>Ваш личный кулинарный гид<br/>для <em>особых моментов</em></h1>
-        <!-- Продающий текст с ценой и триггерами -->
+
+        <div class="hero-eyebrow">Кострома & область · Выездной шеф</div>
+
+        <h1>Ресторанный ужин у вас дома<br/>без хлопот и готовки</h1>
+
         <p>
-            Ресторанный уровень у вас дома. Частные ужины и кейтеринг под ключ — от 5 000 ₽ за вечер.<br/>
-            Закупка, готовка, подача и уборка включены.
+            Частный шеф-повар с выездом. Меню под вас, закупка, готовка и уборка включены.<br/>
+            Стоимость от 5 000 ₽ за вечер — под ваш формат и количество гостей.
         </p>
+
+        <!-- ===== ПАКЕТЫ ===== -->
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:18px;">
+
+            <div style="border:1px solid rgba(197,164,109,0.35);padding:12px 16px;font-size:12px;">
+                🍷 Базовый<br><b>5 000 ₽</b><br><span style="opacity:0.7;">ужин для 2–4 гостей</span>
+            </div>
+
+            <div style="border:2px solid #C5A46D;padding:12px 16px;font-size:12px;position:relative;">
+                <span style="position:absolute;top:-10px;right:6px;font-size:10px;background:#C5A46D;color:#000;padding:2px 6px;">
+                    🔥 популярный
+                </span>
+                🍽 Средний<br><b>10 000–15 000 ₽</b><br><span style="opacity:0.7;">семейные вечера</span>
+            </div>
+
+            <div style="border:1px solid rgba(197,164,109,0.35);padding:12px 16px;font-size:12px;">
+                👑 Премиум<br><b>20 000+ ₽</b><br><span style="opacity:0.7;">банкеты и события</span>
+            </div>
+
+        </div>
+
+        <!-- ===== КНОПКИ ===== -->
         <div class="hero-btns">
-            <!-- ГЛАВНАЯ КНОПКА — MAX -->
-            <a class="btn" href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI" target="_blank">Написать и рассчитать меню</a>
-            <a class="btn btn-outline" href="#menu">Смотреть меню</a>
+
+            <!-- MAX с готовым текстом -->
+            <a class="btn"
+               href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI?text=Здравствуйте!%20Хочу%20заказать%20выездного%20шеф-повара.%20Подскажите%20варианты%20меню%20и%20стоимость."
+               target="_blank">
+               Получить меню и цену
+            </a>
+
+            <a class="btn btn-outline" href="#menu">Смотреть блюда</a>
         </div>
-        <!-- Триггеры: срочность, цена, без хлопот -->
+
+        <!-- ===== КВИЗ-МИНИ БЛОК ===== -->
+        <div style="margin-top:26px;padding:18px;border:1px solid rgba(197,164,109,0.25);background:rgba(255,255,255,0.02);">
+
+            <div style="font-size:13px;margin-bottom:10px;color:rgba(245,240,235,0.8);">
+                ⚡ Быстрый подбор за 10 секунд:
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+
+                <a class="btn btn-outline" style="padding:10px 16px;font-size:11px;"
+                   href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI?text=Хочу%20ужин%20на%202-4%20человека.%20Бюджет%20до%2010k.%20Нужен%20выезд%20шеф-повара."
+                   target="_blank">
+                   2–4 гостя
+                </a>
+
+                <a class="btn btn-outline" style="padding:10px 16px;font-size:11px;"
+                   href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI?text=Хочу%20семейный%20ужин%20на%205-8%20человек.%20Интересует%20полное%20обслуживание."
+                   target="_blank">
+                   5–8 гостей
+                </a>
+
+                <a class="btn btn-outline" style="padding:10px 16px;font-size:11px;"
+                   href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI?text=Нужен%20банкет%20или%20мероприятие%20на%2010+%20человек.%20Хочу%20рассчитать%20полный%20сервис."
+                   target="_blank">
+                   10+ гостей
+                </a>
+
+            </div>
+        </div>
+
+        <!-- триггеры -->
         <div class="hero-triggers">
-            <span>⚡ Свободные даты ограничены</span>
+            <span>⚡ Ответ в течение 1 часа</span>
             <span>📅 Бронирование за 1–3 дня</span>
-            <span>🧹 Без хлопот — уборка включена</span>
+            <span>🧹 Уборка включена</span>
         </div>
-        <!-- Доп. убеждение: прямой контакт, без посредников -->
-        <div style="margin-top:18px;font-size:12px;color:rgba(245,240,235,0.65);">
-            ✔ без посредников · ✔ прямой контакт · ✔ быстрое согласование
-        </div>
-        <!-- Убираем все лишние ссылки на VK и Telegram из первого экрана -->
+
     </div>
 </section>
 
@@ -617,7 +667,6 @@
                 <p>Работаю исключительно с проверенными локальными поставщиками. Без полуфабрикатов и консервантов.</p>
             </div>
         </div>
-        <!-- Психологический триггер: индивидуальный подход -->
         <div class="why-trigger">
             💬 Каждый заказ — индивидуальный проект, не потоковое обслуживание
         </div>
@@ -776,7 +825,7 @@
                     <p>«Теперь регулярно заказываем готовые блюда на неделю. Экономит время и очень удобно.»</p>
                     <span>Семья Кузнецовых</span>
                 </div>
-                <!-- Дубли для бесконечной прокрутки -->
+                <!-- дубли для бесконечной прокрутки -->
                 <div class="review-card">
                     <p>«Диана организовала день рождения на 18 гостей. Всё прошло безупречно: от подачи закусок до финального десерта. Кухня осталась чище, чем была до прихода!»</p>
                     <span>Елена • День рождения</span>
@@ -874,7 +923,7 @@
     </div>
 </section>
 
-<!-- ===== CONTACT FORM (с усилением) ===== -->
+<!-- ===== CONTACT FORM ===== -->
 <section class="section" id="contact">
     <div class="container">
         <div class="section-label">Заявка</div>
@@ -882,7 +931,6 @@
         <div class="divider"></div>
         <p class="section-sub" style="margin-bottom:48px;">Оставьте заявку — перезвоню в течение часа</p>
 
-        <!-- Убеждение перед формой -->
         <p style="text-align:center;color:rgba(245,240,235,0.75);margin-bottom:20px;">
             Ответ в течение 1 часа · Подбор меню бесплатно
         </p>
@@ -925,7 +973,6 @@
             </div>
         </div>
 
-        <!-- Доп. ссылки теперь внизу, не в hero -->
         <p class="form-note" style="margin-top:20px;">
             Также можно написать в <a href="https://t.me/didi327439" style="color:var(--gold);">Telegram</a> или <a href="https://instagram.com/diana_chef" style="color:var(--gold);">Instagram</a>
         </p>
@@ -947,7 +994,7 @@
     </div>
 </section>
 
-<!-- ===== VK / CRM БЛОКИ (оставляем внизу) ===== -->
+<!-- ===== VK / CRM ===== -->
 <section class="section" id="vk" style="background:#0E0E0E;">
     <div class="container">
         <div class="section-label">Сообщество</div>
@@ -960,7 +1007,6 @@
     </div>
 </section>
 
-<!-- ===== CRM QUICK LINKS (внизу) ===== -->
 <section class="section" id="crm" style="background:#0B0B0B;">
     <div class="container">
         <div class="section-label">Быстрая связь</div>
@@ -990,16 +1036,12 @@
     </div>
 </footer>
 
-<!-- ===== STICKY SOCIAL (только MAX, как основной) ===== -->
+<!-- ===== STICKY & FLOATING ===== -->
 <div class="sticky-social">
     <a href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI" target="_blank" title="Написать в MAX">✦</a>
-    <!-- Убрали остальные иконки, чтобы не отвлекать -->
 </div>
-
-<!-- ===== FLOATING MAX (дублирующий) ===== -->
 <a class="floating-max" href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI" target="_blank">Написать в MAX</a>
 
-<!-- ===== МОБИЛЬНАЯ CTA (MAX главный) ===== -->
 <div class="mobile-cta">
     <a href="https://max.ru/u/f9LHodD0cOLZ5vknS0s47NAwAnrzTXubzX3MxM1dIGfMotJqNMJaThV9kpI">MAX</a>
     <a href="#menu">МЕНЮ</a>
@@ -1008,12 +1050,10 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script>
-    // Header shrink on scroll
     window.addEventListener('scroll', () => {
         document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Burger menu
     function toggleMenu() {
         document.getElementById('burger').classList.toggle('open');
         document.getElementById('mobileNav').classList.toggle('open');
@@ -1024,7 +1064,6 @@
         document.getElementById('mobileNav').classList.remove('open');
     }
 
-    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((e, i) => {
             if (e.isIntersecting) {
@@ -1036,24 +1075,18 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // ===== ОБРАБОТКА ФОРМЫ =====
     const form = document.getElementById('orderForm');
     const successBlock = document.getElementById('formSuccess');
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
-
         const formData = new FormData(form);
-
         try {
             const response = await fetch(form.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             });
-
             if (response.ok) {
                 form.style.display = 'none';
                 successBlock.classList.add('show');
